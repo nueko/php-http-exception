@@ -1,4 +1,4 @@
-<?php namespace Sum\Http\Exception;
+<?php namespace Sumeko\Http\Exception;
 
 class IMUsedException extends \Exception
 {
