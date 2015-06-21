@@ -37,9 +37,9 @@ class UnavailableForLegalReasonsException extends Http\ClientException implement
     /**
      * @return string
      */
-    public function getStatus()
+    public function getText()
     {
-        return $this->code . " " . $this->text;
+        return $this->text;
     }
 
 }

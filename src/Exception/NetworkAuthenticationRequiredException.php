@@ -37,9 +37,9 @@ class NetworkAuthenticationRequiredException extends Http\ServerException implem
     /**
      * @return string
      */
-    public function getStatus()
+    public function getText()
     {
-        return $this->code . " " . $this->text;
+        return $this->text;
     }
 
 }

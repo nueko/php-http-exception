@@ -37,9 +37,9 @@ class FailedDependencyException extends Http\ClientException implements Http\Exc
     /**
      * @return string
      */
-    public function getStatus()
+    public function getText()
     {
-        return $this->code . " " . $this->text;
+        return $this->text;
     }
 
 }

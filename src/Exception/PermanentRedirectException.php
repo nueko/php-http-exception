@@ -37,9 +37,9 @@ class PermanentRedirectException extends Http\ClientException implements Http\Ex
     /**
      * @return string
      */
-    public function getStatus()
+    public function getText()
     {
-        return $this->code . " " . $this->text;
+        return $this->text;
     }
 
 }
