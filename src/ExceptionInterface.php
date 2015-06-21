@@ -21,6 +21,6 @@ interface ExceptionInterface
     /**
      * @return string
      */
-    public function getStatus();
+    public function getText();
 
 }
