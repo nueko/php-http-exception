@@ -5,7 +5,7 @@ use Sumeko\Http;
 class ConflictException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 409;
-    protected $message = "Conflict";
+    protected $text = "Conflict";
     protected $explanation = "Indicates that the request could not be completed due to a conflict with the current state of the resource";
     protected $spec = "RFC7231#6.5.8";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.5.8";
@@ -39,7 +39,7 @@ class ConflictException extends Http\ClientException implements Http\ExceptionIn
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

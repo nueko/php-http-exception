@@ -5,7 +5,7 @@ use Sumeko\Http;
 class GatewayTimeoutException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 504;
-    protected $message = "Gateway Time-out";
+    protected $text = "Gateway Time-out";
     protected $explanation = "Indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.";
     protected $spec = "RFC7231#6.6.5";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.6.5";
@@ -39,7 +39,7 @@ class GatewayTimeoutException extends Http\ServerException implements Http\Excep
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

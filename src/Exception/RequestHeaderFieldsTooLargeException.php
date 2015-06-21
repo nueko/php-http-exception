@@ -5,7 +5,7 @@ use Sumeko\Http;
 class RequestHeaderFieldsTooLargeException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 431;
-    protected $message = "Request Header Fields Too Large";
+    protected $text = "Request Header Fields Too Large";
     protected $explanation = "Indicates that the server is unwilling to process the request because its header fields are too large.";
     protected $spec = "RFC6585#5";
     protected $reference = "http://tools.ietf.org/html/rfc6585#section-5";
@@ -39,7 +39,7 @@ class RequestHeaderFieldsTooLargeException extends Http\ClientException implemen
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

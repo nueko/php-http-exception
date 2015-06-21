@@ -5,7 +5,7 @@ use Sumeko\Http;
 class HTTPVersionNotSupportedException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 505;
-    protected $message = "HTTP Version Not Supported";
+    protected $text = "HTTP Version Not Supported";
     protected $explanation = "Indicates that the server does not support, or refuses to support, the protocol version that was used in the request message.";
     protected $spec = "RFC7231#6.6.6";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.6.6";
@@ -39,7 +39,7 @@ class HTTPVersionNotSupportedException extends Http\ServerException implements H
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

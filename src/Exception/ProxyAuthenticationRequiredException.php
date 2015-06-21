@@ -5,7 +5,7 @@ use Sumeko\Http;
 class ProxyAuthenticationRequiredException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 407;
-    protected $message = "Proxy Authentication Required";
+    protected $text = "Proxy Authentication Required";
     protected $explanation = "Is similar to 401 (Unauthorized), but indicates that the client needs to authenticate itself in order to use a proxy";
     protected $spec = "RFC7231#6.3.2";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.3.2";
@@ -39,7 +39,7 @@ class ProxyAuthenticationRequiredException extends Http\ClientException implemen
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

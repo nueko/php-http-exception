@@ -5,7 +5,7 @@ use Sumeko\Http;
 class BadGatewayException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 502;
-    protected $message = "Bad Gateway";
+    protected $text = "Bad Gateway";
     protected $explanation = "Indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.";
     protected $spec = "RFC7231#6.6.3";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.6.3";
@@ -39,7 +39,7 @@ class BadGatewayException extends Http\ServerException implements Http\Exception
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

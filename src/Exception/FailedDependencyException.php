@@ -5,7 +5,7 @@ use Sumeko\Http;
 class FailedDependencyException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 424;
-    protected $message = "Failed Dependency";
+    protected $text = "Failed Dependency";
     protected $explanation = "Means that the method could not be performed on the resource because the requested action depended on another action and that action failed.";
     protected $spec = "RFC5218#10.5";
     protected $reference = "http://tools.ietf.org/html/rfc2518#section-10.5";
@@ -39,7 +39,7 @@ class FailedDependencyException extends Http\ClientException implements Http\Exc
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

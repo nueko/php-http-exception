@@ -5,7 +5,7 @@ use Sumeko\Http;
 class PreconditionRequiredException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 428;
-    protected $message = "Precondition Required";
+    protected $text = "Precondition Required";
     protected $explanation = "Indicates that the origin server requires the request to be conditional.";
     protected $spec = "RFC6585#3";
     protected $reference = "http://tools.ietf.org/html/rfc6585#section-3";
@@ -39,7 +39,7 @@ class PreconditionRequiredException extends Http\ClientException implements Http
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

@@ -5,7 +5,7 @@ use Sumeko\Http;
 class MultiStatusException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 207;
-    protected $message = "Multi-Status";
+    protected $text = "Multi-Status";
     protected $explanation = "Provides status for multiple independent operations.";
     protected $spec = "RFC5218#10.2";
     protected $reference = "http://tools.ietf.org/html/rfc2518#section-10.2";
@@ -39,7 +39,7 @@ class MultiStatusException extends Http\ClientException implements Http\Exceptio
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

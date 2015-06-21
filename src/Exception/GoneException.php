@@ -5,7 +5,7 @@ use Sumeko\Http;
 class GoneException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 410;
-    protected $message = "Gone";
+    protected $text = "Gone";
     protected $explanation = "Indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent";
     protected $spec = "RFC7231#6.5.9";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.5.9";
@@ -39,7 +39,7 @@ class GoneException extends Http\ClientException implements Http\ExceptionInterf
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

@@ -5,7 +5,7 @@ use Sumeko\Http;
 class NotAcceptableException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 406;
-    protected $message = "Not Acceptable";
+    protected $text = "Not Acceptable";
     protected $explanation = "Indicates that the target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation";
     protected $spec = "RFC7231#6.5.6";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.5.6";
@@ -39,7 +39,7 @@ class NotAcceptableException extends Http\ClientException implements Http\Except
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

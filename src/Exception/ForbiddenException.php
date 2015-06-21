@@ -5,7 +5,7 @@ use Sumeko\Http;
 class ForbiddenException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 403;
-    protected $message = "Forbidden";
+    protected $text = "Forbidden";
     protected $explanation = "Indicates that the server understood the request but refuses to authorize it";
     protected $spec = "RFC7231#6.5.3";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.5.3";
@@ -39,7 +39,7 @@ class ForbiddenException extends Http\ClientException implements Http\ExceptionI
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

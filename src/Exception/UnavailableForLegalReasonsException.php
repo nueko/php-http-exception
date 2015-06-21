@@ -5,7 +5,7 @@ use Sumeko\Http;
 class UnavailableForLegalReasonsException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 451;
-    protected $message = "Unavailable For Legal Reasons";
+    protected $text = "Unavailable For Legal Reasons";
     protected $explanation = "This status code indicates that the server is denying access to the resource in response to a legal demand.";
     protected $spec = "draft-tbray-http-legally-restricted-status";
     protected $reference = "http://tools.ietf.org/html/draft-tbray-http-legally-restricted-status";
@@ -39,7 +39,7 @@ class UnavailableForLegalReasonsException extends Http\ClientException implement
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

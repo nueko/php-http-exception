@@ -5,7 +5,7 @@ use Sumeko\Http;
 class IMUsedException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 226;
-    protected $message = "IM Used";
+    protected $text = "IM Used";
     protected $explanation = "The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.";
     protected $spec = "RFC3229#10.4.1";
     protected $reference = "http://tools.ietf.org/html/rfc3229#section-10.4.1";
@@ -39,7 +39,7 @@ class IMUsedException extends Http\ClientException implements Http\ExceptionInte
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

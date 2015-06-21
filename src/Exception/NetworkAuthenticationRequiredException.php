@@ -5,7 +5,7 @@ use Sumeko\Http;
 class NetworkAuthenticationRequiredException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 511;
-    protected $message = "Network Authentication Required";
+    protected $text = "Network Authentication Required";
     protected $explanation = "Indicates that the client needs to authenticate to gain network access.";
     protected $spec = "RFC6585#6";
     protected $reference = "http://tools.ietf.org/html/rfc6585#section-6";
@@ -39,7 +39,7 @@ class NetworkAuthenticationRequiredException extends Http\ServerException implem
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

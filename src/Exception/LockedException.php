@@ -5,7 +5,7 @@ use Sumeko\Http;
 class LockedException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 423;
-    protected $message = "Locked";
+    protected $text = "Locked";
     protected $explanation = "Means the source or destination resource of a method is locked.";
     protected $spec = "RFC5218#10.4";
     protected $reference = "http://tools.ietf.org/html/rfc2518#section-10.4";
@@ -39,7 +39,7 @@ class LockedException extends Http\ClientException implements Http\ExceptionInte
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

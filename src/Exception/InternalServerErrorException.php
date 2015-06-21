@@ -5,7 +5,7 @@ use Sumeko\Http;
 class InternalServerErrorException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 500;
-    protected $message = "Internal Server Error";
+    protected $text = "Internal Server Error";
     protected $explanation = "Indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.";
     protected $spec = "RFC7231#6.6.1";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.6.1";
@@ -39,7 +39,7 @@ class InternalServerErrorException extends Http\ServerException implements Http\
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

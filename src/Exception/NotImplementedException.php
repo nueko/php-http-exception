@@ -5,7 +5,7 @@ use Sumeko\Http;
 class NotImplementedException extends Http\ServerException implements Http\ExceptionInterface
 {
     protected $code = 501;
-    protected $message = "Not Implemented";
+    protected $text = "Not Implemented";
     protected $explanation = "Indicates that the server does not support the functionality required to fulfill the request.";
     protected $spec = "RFC7231#6.6.2";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.6.2";
@@ -39,7 +39,7 @@ class NotImplementedException extends Http\ServerException implements Http\Excep
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }

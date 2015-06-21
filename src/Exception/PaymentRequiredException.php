@@ -5,7 +5,7 @@ use Sumeko\Http;
 class PaymentRequiredException extends Http\ClientException implements Http\ExceptionInterface
 {
     protected $code = 402;
-    protected $message = "Payment Required";
+    protected $text = "Payment Required";
     protected $explanation = "*reserved*";
     protected $spec = "RFC7231#6.5.2";
     protected $reference = "http://tools.ietf.org/html/rfc7231#section-6.5.2";
@@ -39,7 +39,7 @@ class PaymentRequiredException extends Http\ClientException implements Http\Exce
      */
     public function getStatus()
     {
-        return $this->code . " " . $this->message;
+        return $this->code . " " . $this->text;
     }
 
 }
